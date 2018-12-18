@@ -9,7 +9,7 @@ const Header = styled.div`
   background-color: ${({ activeColor, color, isOpen }) =>
     isOpen ? activeColor : color};
   align-items: center;
-  padding: 8px;
+  padding: 15px 8px;
   color: white;
   transition: background-color 0.2s linear;
 
@@ -20,6 +20,7 @@ const Header = styled.div`
 
 const Title = styled.div`
   flex: 1;
+  font-weight: bold;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
@@ -31,11 +32,13 @@ const Icon = styled(FontAwesomeIcon)`
 const Description = styled.div`
   display: flex;
   align-items: center;
-  height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
+  height: ${({ isOpen }) => (isOpen ? "500px" : "0px")};
   transition: height 0.6s cubic-bezier(0.29, 0.9, 0.69, 0.96);
   overflow: hidden;
+  background: ${props => props.color};
+  color: white;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     height: ${({ isOpen }) => (isOpen ? "700px" : "0px")};
   }
 `;
@@ -72,7 +75,7 @@ class ProjectItem extends Component {
           <Title>{title}</Title>
           <Icon icon={`angle-down`} isOpen={isOpen} />
         </Header>
-        <Description isOpen={isOpen}>{children}</Description>
+        <Description isOpen={isOpen} color={color}>{children}</Description>
       </div>
     );
   }

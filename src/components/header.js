@@ -10,7 +10,6 @@ const Title = styled(Link)`
 `;
 
 const TitleWrapper = styled.div`
-  margin-bottom: 10px;
   padding-left: 10px;
 
   &:hover div {
@@ -20,20 +19,15 @@ const TitleWrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   background: white;
-  margin-bottom: "1.45rem";
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  padding: 10px 0px;
+  border-top: 10px solid #6d72c3;
 
   @media (max-width: 700px) {
     flex-direction: column;
   }
-`;
-
-const TopBar = styled.div`
-  height: 10px;
-  background: #6d72c3;
 `;
 
 const Underline = styled.div`
@@ -46,7 +40,6 @@ const Underline = styled.div`
 
 const Header = ({ siteTitle }) => (
   <div>
-    <TopBar />
     <HeaderWrapper>
       <TitleWrapper>
         <h1 style={{ margin: 0 }}>

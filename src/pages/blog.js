@@ -2,9 +2,14 @@ import React from "react";
 import { Link } from "gatsby";
 
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const BlogPage = ({ data }) => (
   <Layout>
+    <SEO
+      title="Blog"
+      keywords={["blog", "personal", "journal", "jofred", "cayabyab"]}
+    />
     <h1>Latest Posts</h1>
     {data.allMarkdownRemark.edges.map(
       ({
