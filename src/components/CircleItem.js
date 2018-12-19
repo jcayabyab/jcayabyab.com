@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Icon = styled(FontAwesomeIcon)`
   font-size: 21pt;
-`
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -42,7 +42,10 @@ const CircleItem = props => {
     <Wrapper>
       <Location>
         {({ location }) => (
-          <Circle {...props} currentPath={location.pathname}>
+          <Circle
+            {...props}
+            currentPath={"/" + location.pathname.split("/")[1]}
+          >
             <Icon icon={props.icon} />
           </Circle>
         )}
@@ -63,7 +66,7 @@ CircleItem.propTypes = {
 
 CircleItem.defaultProps = {
   to: "/",
-  size: 100,
+  size: 50,
   backgroundColor: "#fff",
   borderColor: "black"
 };
