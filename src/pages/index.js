@@ -4,12 +4,15 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Img from "gatsby-image";
+import CircleLink from "../components/CircleLink";
+import { Menu, ImgWrapper } from "../components/styled";
+
 import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
   background: #6d72c3;
+  align-items: center;
   padding: 20px;
 
   @media only screen and (max-width: 900px) {
@@ -21,6 +24,7 @@ const TextWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-right: 20px;
 `;
 
 const IndexHeader = styled.h2`
@@ -30,24 +34,6 @@ const IndexHeader = styled.h2`
 const IndexIntro = styled.p`
   color: white;
   font-size: 13pt;
-`;
-
-const ImgWrapper = styled.div`
-  width: 500px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  margin-left: 20px;
-
-  @media only screen and (max-width: 900px) {
-    width: 80%;
-  }
-`;
-
-const Menu = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px;
-  align-items: center;
 `;
 
 const IndexPage = ({ data }) => (
@@ -65,7 +51,21 @@ const IndexPage = ({ data }) => (
           development and video game design. Look through some of my blog posts
           if you want to get to know me a little better!
         </IndexIntro>
-        <Menu />
+        <Menu>
+          <CircleLink
+            href="./resume.pdf"
+            icon="file-alt"
+            name="resume"
+          />
+          <CircleLink
+            href="https://github.com/JCayabyab"
+            icon={["fab", "github"]}
+          />
+          <CircleLink
+            href="https://www.linkedin.com/in/JCayabyab/"
+            icon={["fab", "linkedin"]}
+          />
+        </Menu>
       </TextWrapper>
       <ImgWrapper>
         <Img fluid={data.me.childImageSharp.fluid} />

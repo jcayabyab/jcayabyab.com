@@ -10,14 +10,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
+        path: `${__dirname}/src/assets/images`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogposts`,
-        path: `${__dirname}/src/blogposts`
+        path: `${__dirname}/src/assets/blogposts`
       }
     },
     "gatsby-plugin-catch-links",

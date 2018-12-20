@@ -2,16 +2,16 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import BlogPreview from "../components/BlogPreview";
+// import BlogPreview from "../components/BlogPreview";
 
 const BlogPage = ({ data }) => {
-  const personalPosts = data.allMarkdownRemark.edges.filter(
-    ({ node }) => node.frontmatter.type === "personal"
-  );
+  // const personalPosts = data.allMarkdownRemark.edges.filter(
+  //   ({ node }) => node.frontmatter.type === "personal"
+  // );
 
-  const techPosts = data.allMarkdownRemark.edges.filter(
-    ({ node }) => node.frontmatter.type === "tech"
-  );
+  // const techPosts = data.allMarkdownRemark.edges.filter(
+  //   ({ node }) => node.frontmatter.type === "tech"
+  // );
 
   return (
     <Layout>
@@ -19,7 +19,7 @@ const BlogPage = ({ data }) => {
         title="Blog"
         keywords={["blog", "personal", "journal", "jofred", "cayabyab"]}
       />
-      <h1>Latest Posts</h1>
+      {/* <h1>Latest Posts</h1>
       <h2>Personal</h2>
       {personalPosts.map(({ node }) => (
         <BlogPreview key={node.id} post={node.frontmatter} />
@@ -27,7 +27,8 @@ const BlogPage = ({ data }) => {
       <h2>Tech</h2>
       {techPosts.map(({ node }) => (
         <BlogPreview key={node.id} post={node.frontmatter} />
-      ))}
+      ))} */}
+      <div>Blog coming soon!</div>
     </Layout>
   );
 };

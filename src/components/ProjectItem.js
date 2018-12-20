@@ -37,6 +37,7 @@ const Description = styled.div`
   overflow: hidden;
   background: ${props => props.color};
   color: white;
+  padding: 0px 20px;
 
   @media screen and (max-width: 900px) {
     height: ${({ isOpen }) => (isOpen ? "700px" : "0px")};

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import ProjectItem from "./ProjectItem";
-import styled from "styled-components";
 import { StaticQuery } from "gatsby";
-import Img from "gatsby-image";
 
-import { ImgWrapper } from "./styled";
+import Img from "gatsby-image";
+import { Menu, ImgWrapper } from "./styled";
+import CircleLink from "./CircleLink";
+
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   border: 1px solid lightgray;
@@ -23,7 +25,7 @@ const Details = styled.div`
 
 const Description = styled.div`
   flex: 1;
-  padding: 0px 20px;
+  margin-right: 15px;
 `;
 
 class ProjectAccordion extends Component {
@@ -47,16 +49,25 @@ class ProjectAccordion extends Component {
         >
           <Details>
             <Description>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at
-              enim luctus, ultricies dolor vitae, tristique sapien. Proin et
-              dictum dui. Class aptent taciti sociosqu ad litora torquent per
-              conubia nostra, per inceptos himenaeos. Proin eleifend lobortis
-              diam, in efficitur odio pellentesque sit amet. Cras lectus eros,
-              dictum vel mi non, vestibulum pulvinar tortor. Ut pulvinar
-              imperdiet mi, a maximus risus ornare eu. Aenean ac tellus
-              consequat, commodo mauris vel, feugiat ex. Vestibulum pharetra
-              metus quis leo lacinia euismod. Praesent lacus magna, suscipit
-              facilisis accumsan eu, sodales at arcu.
+              <p>
+                A simple app that recommends users date locations based on their
+                preferences.
+              </p>
+              <p>
+                <b>Stack: </b>Google Maps API, React, Redux
+              </p>
+              <Menu>
+                <CircleLink
+                  href="https://datespot.surge.sh"
+                  icon="bolt"
+                  name="live example"
+                />
+                <CircleLink
+                  href="https://github.com/JCayabyab/datespot"
+                  icon={["fab", "github"]}
+                />
+                <CircleLink icon="comment-alt" name="blog post" />
+              </Menu>
             </Description>
             <ImgWrapper>
               <Img fluid={datespot.childImageSharp.fluid} />
@@ -72,16 +83,25 @@ class ProjectAccordion extends Component {
         >
           <Details>
             <Description>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at
-              enim luctus, ultricies dolor vitae, tristique sapien. Proin et
-              dictum dui. Class aptent taciti sociosqu ad litora torquent per
-              conubia nostra, per inceptos himenaeos. Proin eleifend lobortis
-              diam, in efficitur odio pellentesque sit amet. Cras lectus eros,
-              dictum vel mi non, vestibulum pulvinar tortor. Ut pulvinar
-              imperdiet mi, a maximus risus ornare eu. Aenean ac tellus
-              consequat, commodo mauris vel, feugiat ex. Vestibulum pharetra
-              metus quis leo lacinia euismod. Praesent lacus magna, suscipit
-              facilisis accumsan eu, sodales at arcu.
+              <p>
+                An app that lets people contribute ideas to their favourite
+                projects.
+              </p>
+              <p>
+                <b>Stack: </b>MongoDB, Express, Node.js, React, Redux
+              </p>
+              <Menu>
+                <CircleLink
+                  href="https://datespot.surge.sh"
+                  icon="bolt"
+                  name="live example"
+                />
+                <CircleLink
+                  href="https://github.com/JCayabyab/datespot"
+                  icon={["fab", "github"]}
+                />
+                <CircleLink icon="comment-alt" name="blog post" />
+              </Menu>
             </Description>
             <ImgWrapper>
               <Img fluid={crowdbrain.childImageSharp.fluid} />

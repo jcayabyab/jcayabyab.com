@@ -6,7 +6,7 @@ import { Location } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: 21pt;
+  font-size: ${({ size }) => size / 1.77}px;
 `;
 
 const Wrapper = styled.div`
@@ -46,7 +46,7 @@ const CircleItem = props => {
             {...props}
             currentPath={"/" + location.pathname.split("/")[1]}
           >
-            <Icon icon={props.icon} />
+            <Icon icon={props.icon} size={props.size} />
           </Circle>
         )}
       </Location>

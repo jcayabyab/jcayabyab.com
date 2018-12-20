@@ -9,10 +9,23 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
   faPencilAlt,
   faHammer,
-  faAngleDown
+  faAngleDown,
+  faArrowRight,
+  faFileAlt,
+  faBolt,
+  faCommentAlt
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faPencilAlt, faHammer, faAngleDown);
+library.add(
+  fab,
+  faPencilAlt,
+  faHammer,
+  faAngleDown,
+  faArrowRight,
+  faFileAlt,
+  faBolt,
+  faCommentAlt
+);
 
 const Layout = ({ children }) => (
   <StaticQuery
