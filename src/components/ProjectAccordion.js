@@ -92,12 +92,12 @@ class ProjectAccordion extends Component {
               </p>
               <Menu>
                 <CircleLink
-                  href="https://datespot.surge.sh"
+                  href="https://crowdbrain.herokuapp.com"
                   icon="bolt"
                   name="live example"
                 />
                 <CircleLink
-                  href="https://github.com/JCayabyab/datespot"
+                  href="https://github.com/JCayabyab/CrowdBrain"
                   icon={["fab", "github"]}
                 />
                 {/* <CircleLink icon="comment-alt" name="blog post" /> */}
