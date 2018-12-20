@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Img from "gatsby-image";
 
 const Header = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ const Header = styled.div`
   background-color: ${({ activeColor, color, isOpen }) =>
     isOpen ? activeColor : color};
   align-items: center;
-  padding: 15px 8px;
+  padding: 15px 15px;
   color: white;
   transition: background-color 0.2s linear;
 
@@ -19,6 +20,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.div`
+  display: flex;
   flex: 1;
   font-weight: bold;
 `;
@@ -62,8 +64,9 @@ class ProjectItem extends Component {
   }
 
   render() {
-    const { onClick, color, activeColor, title, children } = this.props;
+    const { onClick, color, activeColor, title, children, logo } = this.props;
     const { isOpen } = this.state;
+    console.log(logo);
 
     return (
       <div>
@@ -73,10 +76,15 @@ class ProjectItem extends Component {
           activeColor={activeColor}
           isOpen={isOpen}
         >
-          <Title>{title}</Title>
+          <Title>
+            {title}
+            <Img fixed={logo.childImageSharp.fixed} style={{margin: "0px 5px"}}/>
+          </Title>
           <Icon icon={`angle-down`} isOpen={isOpen} />
         </Header>
-        <Description isOpen={isOpen} color={color}>{children}</Description>
+        <Description isOpen={isOpen} color={color}>
+          {children}
+        </Description>
       </div>
     );
   }

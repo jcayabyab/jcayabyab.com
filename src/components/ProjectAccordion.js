@@ -36,7 +36,12 @@ class ProjectAccordion extends Component {
   }
 
   render() {
-    const { crowdbrain, datespot } = this.props.data;
+    const {
+      crowdbrain,
+      datespot,
+      crowdbrainLogo,
+      datespotLogo
+    } = this.props.data;
 
     return (
       <Wrapper>
@@ -46,6 +51,7 @@ class ProjectAccordion extends Component {
           active={this.state.active}
           color="#ff3535"
           activeColor="#df1515"
+          logo={datespotLogo}
         >
           <Details>
             <Description>
@@ -80,6 +86,7 @@ class ProjectAccordion extends Component {
           active={this.state.active}
           color="#50a0eb"
           activeColor="#0090da"
+          logo={crowdbrainLogo}
         >
           <Details>
             <Description>
@@ -122,6 +129,20 @@ export default props => (
         }
         datespot: file(relativePath: { eq: "datespot.png" }) {
           ...fluidImage
+        }
+        crowdbrainLogo: file(relativePath: { eq: "crowdbrain-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        datespotLogo: file(relativePath: { eq: "datespot-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
         }
       }
     `}
