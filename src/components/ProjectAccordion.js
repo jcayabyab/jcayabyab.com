@@ -66,7 +66,7 @@ class ProjectAccordion extends Component {
                   href="https://github.com/JCayabyab/datespot"
                   icon={["fab", "github"]}
                 />
-                <CircleLink icon="comment-alt" name="blog post" />
+                {/* <CircleLink icon="comment-alt" name="blog post" /> */}
               </Menu>
             </Description>
             <ImgWrapper>
@@ -100,7 +100,7 @@ class ProjectAccordion extends Component {
                   href="https://github.com/JCayabyab/datespot"
                   icon={["fab", "github"]}
                 />
-                <CircleLink icon="comment-alt" name="blog post" />
+                {/* <CircleLink icon="comment-alt" name="blog post" /> */}
               </Menu>
             </Description>
             <ImgWrapper>
