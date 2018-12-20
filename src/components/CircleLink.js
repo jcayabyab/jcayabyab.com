@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
-  font-size: 12pt;
+  font-size: 11pt;
+  font-weight: bold;
 `;
 
 const Circle = styled.a`

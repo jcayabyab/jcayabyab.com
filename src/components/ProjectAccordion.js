@@ -56,8 +56,8 @@ class ProjectAccordion extends Component {
           <Details>
             <Description>
               <p>
-                A simple app that recommends users date locations based on their
-                preferences.
+                A simple app that recommends interesting date ideas around their
+                current location.
               </p>
               <p>
                 <b>Stack: </b>Google Maps API, React, Redux
