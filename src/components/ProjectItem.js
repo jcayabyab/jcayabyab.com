@@ -7,15 +7,15 @@ import Img from "gatsby-image";
 const Header = styled.div`
   display: flex;
   cursor: pointer;
-  background-color: ${({ activeColor, color, isopen }) =>
-    isopen ? activeColor : color};
+  background-color: ${({ activecolor, color, isopen }) =>
+    isopen ? activecolor : color};
   align-items: center;
   padding: 15px 15px;
   color: white;
   transition: background-color 0.2s linear;
 
   &:hover {
-    background-color: ${props => props.activeColor};
+    background-color: ${props => props.activecolor};
   }
 `;
 
@@ -73,7 +73,7 @@ class ProjectItem extends Component {
         <Header
           onClick={onClick}
           color={color}
-          activeColor={activeColor}
+          activecolor={activeColor}
           isopen={isOpen}
         >
           <Title>
@@ -83,9 +83,9 @@ class ProjectItem extends Component {
               style={{ margin: "0px 5px" }}
             />
           </Title>
-          <Icon icon={`angle-down`} isOpen={isOpen} />
+          <Icon icon={`angle-down`} isopen={isOpen ? 1 : 0} />
         </Header>
-        <Description isOpen={isOpen} color={color}>
+        <Description isopen={isOpen ? 1 : 0} color={color}>
           {children}
         </Description>
       </div>
