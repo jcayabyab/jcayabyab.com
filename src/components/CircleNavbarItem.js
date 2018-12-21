@@ -6,7 +6,7 @@ import { Location } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: ${({ size }) => size / 1.77}px;
+  font-size: ${({ iconsize }) => iconsize / 1.77}px;
 `;
 
 const Wrapper = styled.div`
@@ -22,9 +22,9 @@ const Circle = styled(Link)`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   box-shadow: 0px 0px 0px
-    ${({ to, currentPath }) => (to === currentPath ? "7px" : "4px")};
-  color: ${props => props.borderColor};
-  background-color: ${props => props.backgroundColor};
+    ${({ to, currentpath }) => (to === currentpath ? "7px" : "4px")};
+  color: ${props => props.bordercolor};
+  background-color: ${props => props.backgroundcolor};
   border-radius: ${props => props.size / 2}px;
   border-style: solid;
   border-width: 0px;
@@ -33,13 +33,13 @@ const Circle = styled(Link)`
   transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 0px 0px 7px ${props => props.borderColor};
+    box-shadow: 0px 0px 0px 7px ${props => props.bordercolor};
   }
 `;
 
 const Text = styled.div`
   font-size: 13pt;
-`
+`;
 
 const CircleItem = props => {
   return (
@@ -48,9 +48,9 @@ const CircleItem = props => {
         {({ location }) => (
           <Circle
             {...props}
-            currentPath={"/" + location.pathname.split("/")[1]}
+            currentpath={"/" + location.pathname.split("/")[1]}
           >
-            <Icon icon={props.icon} size={props.size} />
+            <Icon icon={props.icon} iconsize={props.size} />
           </Circle>
         )}
       </Location>
@@ -64,13 +64,13 @@ export default CircleItem;
 CircleItem.propTypes = {
   to: PropTypes.string,
   size: PropTypes.number,
-  backgroundColor: PropTypes.string,
-  borderColor: PropTypes.string
+  backgroundcolor: PropTypes.string,
+  bordercolor: PropTypes.string
 };
 
 CircleItem.defaultProps = {
   to: "/",
   size: 50,
-  backgroundColor: "#fff",
-  borderColor: "black"
+  backgroundcolor: "#fff",
+  bordercolor: "black"
 };

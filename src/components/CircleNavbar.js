@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CircleItem from "./CircleItem";
+import CircleNavbarItem from "./CircleNavbarItem";
 import styled from "styled-components";
 
 const Carat = styled.div`
@@ -18,13 +18,13 @@ class CircleNavbar extends Component {
     const options = [
       {
         name: "projects",
-        borderColor: "#7EB2DD",
+        bordercolor: "#7EB2DD",
         to: "/projects",
         icon: "hammer"
       },
       {
         name: "blog",
-        borderColor: "#d71712",
+        bordercolor: "#d71712",
         to: "/blog",
         icon: "pencil-alt"
       }
@@ -34,7 +34,7 @@ class CircleNavbar extends Component {
       <div>
         <NavWrapper>
           {options.map(option => (
-            <CircleItem
+            <CircleNavbarItem
               key={option.name}
               {...option}
               size={50}
