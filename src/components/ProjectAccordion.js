@@ -9,7 +9,6 @@ import CircleLink from "./CircleLink";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  border: 1px solid lightgray;
   overflow: hidden;
 `;
 

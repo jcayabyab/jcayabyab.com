@@ -23,6 +23,7 @@ const Title = styled.div`
   display: flex;
   flex: 1;
   font-weight: bold;
+  align-items: center;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
@@ -42,7 +43,7 @@ const Description = styled.div`
   padding: 0px 20px;
 
   @media screen and (max-width: 900px) {
-    height: ${({ isOpen }) => (isOpen ? "700px" : "0px")};
+    height: ${({ isOpen }) => (isOpen ? "calc(100vh - 52px)" : "0px")};
   }
 `;
 
@@ -78,7 +79,10 @@ class ProjectItem extends Component {
         >
           <Title>
             {title}
-            <Img fixed={logo.childImageSharp.fixed} style={{margin: "0px 5px"}}/>
+            <Img
+              fixed={logo.childImageSharp.fixed}
+              style={{ margin: "0px 5px" }}
+            />
           </Title>
           <Icon icon={`angle-down`} isOpen={isOpen} />
         </Header>
