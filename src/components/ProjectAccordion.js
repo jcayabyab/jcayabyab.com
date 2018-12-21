@@ -65,7 +65,7 @@ class ProjectAccordion extends Component {
                 <CircleLink
                   href="https://datespot.surge.sh"
                   icon="bolt"
-                  name="live example"
+                  name="live demo"
                 />
                 <CircleLink
                   href="https://github.com/JCayabyab/datespot"
@@ -100,7 +100,7 @@ class ProjectAccordion extends Component {
                 <CircleLink
                   href="https://crowdbrain.herokuapp.com"
                   icon="bolt"
-                  name="live example"
+                  name="live demo"
                 />
                 <CircleLink
                   href="https://github.com/JCayabyab/CrowdBrain"

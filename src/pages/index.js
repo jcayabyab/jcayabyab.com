@@ -33,7 +33,6 @@ const IndexHeader = styled.h2`
 
 const IndexIntro = styled.p`
   color: white;
-  font-size: 13pt;
 `;
 
 const IndexPage = ({ data }) => (

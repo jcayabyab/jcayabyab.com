@@ -28,7 +28,7 @@ const Circle = styled.a`
   border-radius: ${props => props.size / 2}px;
   border-style: solid;
   border-width: 0px;
-  margin: 0px 15px;
+  margin: 2px 15px;
   cursor: pointer;
   transition: box-shadow 0.2s ease-in-out;
 

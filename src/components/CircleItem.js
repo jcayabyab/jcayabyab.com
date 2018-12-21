@@ -37,6 +37,10 @@ const Circle = styled(Link)`
   }
 `;
 
+const Text = styled.div`
+  font-size: 13pt;
+`
+
 const CircleItem = props => {
   return (
     <Wrapper>
@@ -50,7 +54,7 @@ const CircleItem = props => {
           </Circle>
         )}
       </Location>
-      {props.name}
+      <Text>{props.name}</Text>
     </Wrapper>
   );
 };
