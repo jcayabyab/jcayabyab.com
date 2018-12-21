@@ -7,8 +7,8 @@ import Img from "gatsby-image";
 const Header = styled.div`
   display: flex;
   cursor: pointer;
-  background-color: ${({ activeColor, color, isOpen }) =>
-    isOpen ? activeColor : color};
+  background-color: ${({ activeColor, color, isopen }) =>
+    isopen ? activeColor : color};
   align-items: center;
   padding: 15px 15px;
   color: white;
@@ -28,14 +28,14 @@ const Title = styled.div`
 
 const Icon = styled(FontAwesomeIcon)`
   margin: 0px 7px;
-  transform: rotate(${props => (props.isOpen ? 180 : 0)}deg);
+  transform: rotate(${props => (props.isopen ? 180 : 0)}deg);
   transition: transform 0.2s ease-out;
 `;
 
 const Description = styled.div`
   display: flex;
   align-items: center;
-  height: ${({ isOpen }) => (isOpen ? "500px" : "0px")};
+  height: ${({ isopen }) => (isopen ? "500px" : "0px")};
   transition: height 0.6s cubic-bezier(0.29, 0.9, 0.69, 0.96);
   overflow: hidden;
   background: ${props => props.color};
@@ -43,7 +43,7 @@ const Description = styled.div`
   padding: 0px 20px;
 
   @media screen and (max-width: 900px) {
-    height: ${({ isOpen }) => (isOpen ? "calc(100vh - 52px)" : "0px")};
+    height: ${({ isopen }) => (isopen ? "calc(100vh - 52px)" : "0px")};
   }
 `;
 
@@ -67,7 +67,6 @@ class ProjectItem extends Component {
   render() {
     const { onClick, color, activeColor, title, children, logo } = this.props;
     const { isOpen } = this.state;
-    console.log(logo);
 
     return (
       <div>
@@ -75,7 +74,7 @@ class ProjectItem extends Component {
           onClick={onClick}
           color={color}
           activeColor={activeColor}
-          isOpen={isOpen}
+          isopen={isOpen}
         >
           <Title>
             {title}
