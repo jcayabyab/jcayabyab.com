@@ -1,9 +1,11 @@
 ---
 path: "/blog/example"
-date: "2018-12-17"
+date: "2018-12-21"
 title: "Example"
+subtitle: "Here is a cool subtitle."
 author: "Jofred Cayabyab"
 type: "personal"
+published: true
 ---
 
 This is my very first blog post in Gatsby. Little did they know, I am the one, the only son.

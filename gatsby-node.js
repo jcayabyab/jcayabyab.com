@@ -12,10 +12,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             id
             frontmatter {
-              title
               path
-              date
-              author
             }
           }
         }

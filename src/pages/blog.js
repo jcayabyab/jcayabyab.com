@@ -6,19 +6,27 @@ import BlogPreview from "../components/BlogPreview";
 
 import styled from "styled-components";
 
-const Header = styled.h1`
+const Wrapper = styled.h1`
   display: flex;
   justify-content: center;
+  margin: 0;
+`;
+
+const Header = styled.div`
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 7px solid #6d72c3;
 `;
 
 const HeaderTab = styled.a`
   cursor: pointer;
-  color: ${props => (props.active ? "#000" : "#999")};
+  opacity: ${props => (props.active ? "1" : "0.6")};
 
-  transition: color 0.2s linear;
+  transition: opacity 0.2s linear;
 
   &:hover {
-    color: #000;
+    opacity: 1;
   }
 `;
 
@@ -33,21 +41,23 @@ class BlogPage extends Component {
 
   renderHeader() {
     return (
-      <Header>
-        <HeaderTab
-          onClick={() => this.updateTab("personal")}
-          active={this.state.selectedTab === "personal"}
-        >
-          Personal
-        </HeaderTab>
-        <Slash>/</Slash>
-        <HeaderTab
-          onClick={() => this.updateTab("tech")}
-          active={this.state.selectedTab === "tech"}
-        >
-          Tech
-        </HeaderTab>
-      </Header>
+      <Wrapper>
+        <Header>
+          <HeaderTab
+            onClick={() => this.updateTab("personal")}
+            active={this.state.selectedTab === "personal"}
+          >
+            Personal
+          </HeaderTab>
+          <Slash>/</Slash>
+          <HeaderTab
+            onClick={() => this.updateTab("tech")}
+            active={this.state.selectedTab === "tech"}
+          >
+            Tech
+          </HeaderTab>
+        </Header>
+      </Wrapper>
     );
   }
 
@@ -69,17 +79,11 @@ class BlogPage extends Component {
     switch (this.state.selectedTab) {
       case "tech":
         return techPosts.map(({ node }) => (
-          <BlogPreview
-            key={node.id}
-            post={{ ...node.frontmatter, excerpt: node.excerpt }}
-          />
+          <BlogPreview key={node.id} post={{ ...node.frontmatter }} />
         ));
       case "personal":
         return personalPosts.map(({ node }) => (
-          <BlogPreview
-            key={node.id}
-            post={{ ...node.frontmatter, excerpt: node.excerpt }}
-          />
+          <BlogPreview key={node.id} post={{ ...node.frontmatter }} />
         ));
       default:
         console.log(this.state.selectedTab);
@@ -108,16 +112,19 @@ class BlogPage extends Component {
 
 export const query = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      limit: 10
+      sort: {fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             path
+            subtitle
             date
-            author
             type
           }
         }

@@ -11,7 +11,10 @@ const typography = new Typography({
     "Arial",
     "sans-serif"
   ],
-  bodyFontFamily: ["Lato", "Helvetica", "sans-serif"]
+  bodyFontFamily: ["Lato", "Helvetica", "sans-serif"],
+  overrideStyles: () => ({
+    [`h1, h2, h3, h4, h5, h6`]: { marginBottom: "10px" }
+  })
 });
 
 export default typography;
