@@ -78,13 +78,17 @@ class BlogPage extends Component {
 
     switch (this.state.selectedTab) {
       case "tech":
-        return techPosts.map(({ node }) => (
-          <BlogPreview key={node.id} post={{ ...node.frontmatter }} />
-        ));
+        return techPosts.length
+          ? techPosts.map(({ node }) => (
+              <BlogPreview key={node.id} post={{ ...node.frontmatter }} />
+            ))
+          : "Look out for posts very soon!";
       case "personal":
-        return personalPosts.map(({ node }) => (
-          <BlogPreview key={node.id} post={{ ...node.frontmatter }} />
-        ));
+        return personalPosts.length
+          ? personalPosts.map(({ node }) => (
+              <BlogPreview key={node.id} post={{ ...node.frontmatter }} />
+            ))
+          : "Look out for posts very soon!";
       default:
         console.log(this.state.selectedTab);
         return (
@@ -114,7 +118,7 @@ export const query = graphql`
   query BlogIndexQuery {
     allMarkdownRemark(
       limit: 10
-      sort: {fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true } } }
     ) {
       edges {

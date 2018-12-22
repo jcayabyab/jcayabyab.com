@@ -1,7 +1,7 @@
 ---
 path: "/blog/example"
 date: "2018-12-21"
-title: "Example"
+title: "Example: The reason why you shouldn't have super long titles like this one"
 subtitle: "Here is a cool subtitle."
 author: "Jofred Cayabyab"
 type: "personal"

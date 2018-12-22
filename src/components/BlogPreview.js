@@ -8,6 +8,8 @@ const LinkWrapper = styled(Link)`
   text-decoration: none;
   color: inherit;
   margin: 2px;
+  display: block;
+  padding-top: 20px;
 `;
 
 const Wrapper = styled.div`
@@ -16,22 +18,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const Header = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-`;
-
 const BlogPreview = ({ post }) => {
   const { title, date, path, subtitle } = post;
 
   return (
     <LinkWrapper to={path}>
       <Wrapper>
-        <Header>
-          <h2>{title}</h2>
-          <small style={{ margin: "0 10px" }}>{formatDate(date)}</small>
-        </Header>
+        <div style={{ marginBottom: "10px" }}>
+          <h2 style={{ display: "inline", margin: 0 }}>{title}</h2>
+          <small style={{ color: "gray", marginLeft: "5px" }}>{formatDate(date)}</small>
+        </div>
         <p>{subtitle}</p>
       </Wrapper>
       <hr style={{ margin: 0, background: "#eee" }} />

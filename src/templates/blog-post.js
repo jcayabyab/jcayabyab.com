@@ -26,7 +26,7 @@ const Template = ({ data }) => {
     <Layout>
       <Wrapper>
         <h1 style={{ fontSize: "32pt" }}>{title}</h1>
-        <h4>{subtitle}</h4>
+        <h4 style={{marginBottom: "5px"}}>{subtitle}</h4>
         <DateAndAuthor>
           <small>
             <FontAwesomeIcon icon="calendar-day" />

@@ -5,7 +5,7 @@ title: "Tech Ex"
 subtitle: "Here is a cool subtitle."
 author: "Jofred Cayabyab"
 type: "tech"
-published: true
+published: false
 ---
 
 This is my very first tech blog post in Gatsby.
