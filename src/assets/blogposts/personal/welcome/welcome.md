@@ -30,6 +30,6 @@ When my engineering degree isn't taking up all of my free time, here are some th
 
 ![me devoting myself to my switch](./intro2.png)
 
-As an aside, a lifelong goal of mine has been to create and develop my own video game one day. I'm also treating this blog as a way to practice some skills that would help me in this pursuit, such as my writing skills and my pixel art skills. I'm probably going to try to include some Wait But Why-esque illustrations in pixel art form on future blog posts.
+As an aside, a lifelong goal of mine has been to create and develop my own video game one day. I'm also treating this blog as a way to practice some skills that would help me in this pursuit, like writing and pixel art. I'm going to try to include some [Wait But Why](https://waitbutwhy.com/)-esque illustrations in pixel art form on future blog posts.
 
-Hopefully that serves as a fair introduction to this blog! Hope you come back to read some of my future blog posts, where I try to be funny, but not too hard to the point where you don't want to be my friend. Until next time!
+Hopefully that serves as a fair introduction to this blog! Hope you come back to read some of my future blog posts, where I try to be funny, but not try too hard to the point where you wouldn't want to be my friend. Until next time!
