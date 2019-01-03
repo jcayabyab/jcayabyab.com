@@ -8,7 +8,7 @@ type: "personal"
 published: true
 ---
 
-Hey! Thanks for the taking the time to look through my site and my blog. I'm a excited to get some content up on this thing - I have a lot of ideas for future interesting blog posts. But, before I do any of that, here's a little introduction.
+Hey! Thanks for the taking the time to look through my site and my blog. I'm excited to get some content up on this thing - I have a lot of ideas for future interesting blog posts. But, before I do any of that, here's a little introduction.
 
 My name is Jofred Cayabyab, but I've been called **Jay Jay** as a nickname basically all my life. According to my parents, when I was but a young lad, I really liked a show called [Jay Jay the Jet Plane](https://en.wikipedia.org/wiki/Jay_Jay_the_Jet_Plane) enough to start calling myself Jay Jay, and I guess the name has just stuck since then. Ironically enough, I actually have no recollection whatsoever of the show itself; the only real cartoons I remember watching when I was really young were The Berenstain Bears and Max & Ruby. But if you know me by one name and get confused when you hear me get called the other, now you know why.
 
