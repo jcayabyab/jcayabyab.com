@@ -33,7 +33,6 @@ const IndexHeader = styled.h2`
 
 const IndexIntro = styled.p`
   color: white;
-  font-size: 13pt;
 `;
 
 const IndexPage = ({ data }) => (
@@ -48,15 +47,12 @@ const IndexPage = ({ data }) => (
         <IndexIntro>
           I'm currently in my second year in Software Engineering at the
           University of Calgary. My current interests include full-stack web
-          development and video game design. Look through some of my blog posts
-          if you want to get to know me a little better!
+          development and video game design. I'm currently setting up a blog on
+          this site where I hope you'll be able to get to know me a little
+          better!
         </IndexIntro>
         <Menu>
-          <CircleLink
-            href="./resume.pdf"
-            icon="file-alt"
-            name="resume"
-          />
+          <CircleLink href="./resume.pdf" icon="file-alt" name="resume" />
           <CircleLink
             href="https://github.com/JCayabyab"
             icon={["fab", "github"]}

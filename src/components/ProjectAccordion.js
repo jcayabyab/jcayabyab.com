@@ -9,7 +9,6 @@ import CircleLink from "./CircleLink";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  border: 1px solid lightgray;
   overflow: hidden;
 `;
 
@@ -36,7 +35,12 @@ class ProjectAccordion extends Component {
   }
 
   render() {
-    const { crowdbrain, datespot } = this.props.data;
+    const {
+      crowdbrain,
+      datespot,
+      crowdbrainLogo,
+      datespotLogo
+    } = this.props.data;
 
     return (
       <Wrapper>
@@ -46,12 +50,13 @@ class ProjectAccordion extends Component {
           active={this.state.active}
           color="#ff3535"
           activeColor="#df1515"
+          logo={datespotLogo}
         >
           <Details>
             <Description>
               <p>
-                A simple app that recommends users date locations based on their
-                preferences.
+                A simple app that recommends interesting date ideas around their
+                current location.
               </p>
               <p>
                 <b>Stack: </b>Google Maps API, React, Redux
@@ -60,13 +65,13 @@ class ProjectAccordion extends Component {
                 <CircleLink
                   href="https://datespot.surge.sh"
                   icon="bolt"
-                  name="live example"
+                  name="live demo"
                 />
                 <CircleLink
                   href="https://github.com/JCayabyab/datespot"
                   icon={["fab", "github"]}
                 />
-                <CircleLink icon="comment-alt" name="blog post" />
+                {/* <CircleLink icon="comment-alt" name="blog post" /> */}
               </Menu>
             </Description>
             <ImgWrapper>
@@ -80,6 +85,7 @@ class ProjectAccordion extends Component {
           active={this.state.active}
           color="#50a0eb"
           activeColor="#0090da"
+          logo={crowdbrainLogo}
         >
           <Details>
             <Description>
@@ -92,15 +98,15 @@ class ProjectAccordion extends Component {
               </p>
               <Menu>
                 <CircleLink
-                  href="https://datespot.surge.sh"
+                  href="https://crowdbrain.herokuapp.com"
                   icon="bolt"
-                  name="live example"
+                  name="live demo"
                 />
                 <CircleLink
-                  href="https://github.com/JCayabyab/datespot"
+                  href="https://github.com/JCayabyab/CrowdBrain"
                   icon={["fab", "github"]}
                 />
-                <CircleLink icon="comment-alt" name="blog post" />
+                {/* <CircleLink icon="comment-alt" name="blog post" /> */}
               </Menu>
             </Description>
             <ImgWrapper>
@@ -122,6 +128,20 @@ export default props => (
         }
         datespot: file(relativePath: { eq: "datespot.png" }) {
           ...fluidImage
+        }
+        crowdbrainLogo: file(relativePath: { eq: "crowdbrain-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        datespotLogo: file(relativePath: { eq: "datespot-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
         }
       }
     `}

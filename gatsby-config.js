@@ -28,7 +28,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: "1024px",
+              maxWidth: 800,
               wrapperStyle: `
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
               `,
@@ -41,6 +41,12 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: "src/utils/typography"
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

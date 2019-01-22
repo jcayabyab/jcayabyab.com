@@ -2,37 +2,40 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Img from "gatsby-image";
 
 const Header = styled.div`
   display: flex;
   cursor: pointer;
-  background-color: ${({ activeColor, color, isOpen }) =>
-    isOpen ? activeColor : color};
+  background-color: ${({ activecolor, color, isopen }) =>
+    isopen ? activecolor : color};
   align-items: center;
-  padding: 15px 8px;
+  padding: 15px 15px;
   color: white;
   transition: background-color 0.2s linear;
 
   &:hover {
-    background-color: ${props => props.activeColor};
+    background-color: ${props => props.activecolor};
   }
 `;
 
 const Title = styled.div`
+  display: flex;
   flex: 1;
   font-weight: bold;
+  align-items: center;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
   margin: 0px 7px;
-  transform: rotate(${props => (props.isOpen ? 180 : 0)}deg);
+  transform: rotate(${props => (props.isopen ? 180 : 0)}deg);
   transition: transform 0.2s ease-out;
 `;
 
 const Description = styled.div`
   display: flex;
   align-items: center;
-  height: ${({ isOpen }) => (isOpen ? "500px" : "0px")};
+  height: ${({ isopen }) => (isopen ? "500px" : "0px")};
   transition: height 0.6s cubic-bezier(0.29, 0.9, 0.69, 0.96);
   overflow: hidden;
   background: ${props => props.color};
@@ -40,7 +43,7 @@ const Description = styled.div`
   padding: 0px 20px;
 
   @media screen and (max-width: 900px) {
-    height: ${({ isOpen }) => (isOpen ? "700px" : "0px")};
+    height: ${({ isopen }) => (isopen ? "calc(100vh - 52px)" : "0px")};
   }
 `;
 
@@ -62,7 +65,7 @@ class ProjectItem extends Component {
   }
 
   render() {
-    const { onClick, color, activeColor, title, children } = this.props;
+    const { onClick, color, activeColor, title, children, logo } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -70,13 +73,21 @@ class ProjectItem extends Component {
         <Header
           onClick={onClick}
           color={color}
-          activeColor={activeColor}
-          isOpen={isOpen}
+          activecolor={activeColor}
+          isopen={isOpen}
         >
-          <Title>{title}</Title>
-          <Icon icon={`angle-down`} isOpen={isOpen} />
+          <Title>
+            {title}
+            <Img
+              fixed={logo.childImageSharp.fixed}
+              style={{ margin: "0px 5px" }}
+            />
+          </Title>
+          <Icon icon={`angle-down`} isopen={isOpen ? 1 : 0} />
         </Header>
-        <Description isOpen={isOpen} color={color}>{children}</Description>
+        <Description isopen={isOpen ? 1 : 0} color={color}>
+          {children}
+        </Description>
       </div>
     );
   }
