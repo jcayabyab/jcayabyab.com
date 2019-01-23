@@ -5,12 +5,12 @@ title: "Efficient A's: Getting the Highest Mark from the Lowest Effort"
 subtitle: "A quick guide on studying efficiently and scoring the highest on your tests."
 author: "Jofred Cayabyab"
 type: "personal"
-published: false
+published: true
 ---
 
 Let me start this off by saying that, like all of us, I can be pretty lazy at times. It's the lazy kind of feeling you have when wake up at noon, then stay in bed until 5 looking at memes, despite saying you'll wake up at 6am last night. But there's still work to be done and tasks to complete, so I have to find ways to motivate myself to complete these tasks.
 
-![image of memes in bed]()
+![image of memes in bed](study1.png)
 
 Despite all of this, my academic results and excellence reflect someone who studies diligently and pulls all-nighters and wakes up at 5am every day to study. I ended this last fall semester of college with A+'s across the board with honestly less effort than I thought I would have needed to put in. A reason for this is because, out of my laziness, I ensure that all the time I spend learning the material is spent as efficiently as possible. I have watched a lot of my friends sink into habits that make them learn material at a slower pace when they could be making the most of their study hours, so I'm here to share of my personal studying and test taking tips to help you stuff the most knowledge into your brain and get the best possible mark on your tests.
 
@@ -27,7 +27,7 @@ See, Rolando feels like he's learning the material, but when he's trying to solv
 - Not understanding something during the lecture and saying "Oh well, I'll learn it for the final"
 - Wears sunglasses indoors. Not cool, Rolando.
 
-![rolando saying makes sense in sunglasses]()
+![rolando saying makes sense in sunglasses](study2-text.png)
 
 See, what Rolando is doing here is called **passive recall**, which is where you're not really sure if you're learning or not. What you should really be doing is **[active recall](https://en.wikipedia.org/wiki/Active_recall)**, where you're interacting with the course material and actively stimulating your memory while you study. Here, your brain actually has an active problem to solve and try to come up with solutions for. This does two things:
 
@@ -48,7 +48,7 @@ Then, a week later, he revealed his secret to us. For every word, he had a syste
 
 Imagine turning on the sink, and instead of water, blood flows out! You can feel the stress as the sink starts to overflow with blood, and you can feel the stickyness of the red liquid as you desperately try to stop the flow of the blood. Now, when you think of red, you can immediately think of the PTSD-inducing scenario you just conjured up. This is a lot easier and more natural to remember than to try to remember that the number 12 maps to _water_.
 
-![blood flowing out of sink]()
+![blood flowing out of sink](study3.png)
 
 You can use this with any concept or detail you find yourself struggling to memorize. Here are some examples:
 
@@ -85,8 +85,8 @@ If a test comes with a formula sheet, they do that for a reason. Many questions 
 
 This is probably an obvious point, but I often find myself forgetting this tip and end up spending way too much time on a single question. But really, if you're stuck on a question, it's only one mark. It's better to skip it than to let yourself devolve into a bigger ball of stress than you already are. In addition, some of the later questions might even give you some information or some hints on how to solve the question you were stuck on.
 
-Note that everyone learns and absorbs information in their own way, so one or more of these tips may not work best for you. If you want to let me know if there's anything I could improve or clarify, you can send me a message over on my [LinkedIn](https://www.linkedin.com/in/jofred-cayabyab/) or through [email](mailto:jofred.cayabyab1@ucalgary.ca). Otherwise, I hope these tips help you study better and give you time to watch that Netflix series you haven't been able to keep up with!
+Note that everyone learns and absorbs information in their own way, so one or more of these tips may not work best for you. Feel free to hit me up through [LinkedIn](https://www.linkedin.com/in/jofred-cayabyab/) or via [email](mailto:jofred.cayabyab1@ucalgary.ca) if there's anything you want to share with me or if you have any tips of your own. Otherwise, I hope these tips help you study better and give you time to watch that Netflix series you haven't been able to keep up with!
 
 **P.S.:** If all else fails, you can put on some round wireframe glasses. Even if you're not doing that well academically, you'll look and feel smart, and that's really all that matters in the end. The glasses will also help gazing into the mirror at your sorry self and motivating you to change your lazy and self-destructive ways.
 
-![rolando with glasses]()
+![rolando with glasses](study4.png)
