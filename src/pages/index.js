@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => (
             icon={["fab", "github"]}
           />
           <CircleLink
-            href="https://www.linkedin.com/in/JCayabyab/"
+            href="https://www.linkedin.com/in/jofred-cayabyab/"
             icon={["fab", "linkedin"]}
           />
         </Menu>

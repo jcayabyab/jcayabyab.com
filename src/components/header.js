@@ -13,10 +13,11 @@ const HeaderWrapper = styled.div`
   align-items: center;
   padding: 10px 0px;
   border-top: 10px solid #6d72c3;
+  transition: height 1s linear;
 `;
 
 const TitleWrapper = styled.div`
-  margin-top: 8px;
+  margin-top: 7px;
   padding-left: 10px;
 
   &:hover div {
@@ -36,7 +37,7 @@ const Title = styled(Link)`
 `;
 
 const TitleText = styled.h1`
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 
   @media only screen and (max-width: 600px) {
     display: none;
@@ -46,7 +47,7 @@ const TitleText = styled.h1`
 const Logo = styled.img`
   height: 90px;
   width: 90px;
-  margin: 0;
+  margin-bottom: -7px;
 
   @media only screen and (min-width: 600px) {
     display: none;
