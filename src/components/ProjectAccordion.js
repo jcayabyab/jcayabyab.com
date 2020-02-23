@@ -16,6 +16,7 @@ const Details = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100%;
 
   @media only screen and (max-width: 900px) {
     flex-direction: column;
@@ -38,12 +39,47 @@ class ProjectAccordion extends Component {
     const {
       crowdbrain,
       datespot,
+      bike2go,
+      myrecipelist,
       crowdbrainLogo,
-      datespotLogo
+      datespotLogo,
+      bike2goLogo,
+      myrecipelistLogo
     } = this.props.data;
 
     return (
       <Wrapper>
+        <ProjectItem
+          title="bike2go"
+          onClick={() => this.onProjectClick("bike2go")}
+          active={this.state.active}
+          color="#00a000"
+          activeColor="#008000"
+          logo={bike2goLogo}
+        >
+          <Details>
+            <Description>
+              <p>
+                An authentication system for bike-sharing platforms to use
+                facial recognition to handle bike signouts.
+              </p>
+              <p>
+                <b>Stack: </b>Azure Face API, MongoDB, Express, Node.js, React,
+                Redux
+              </p>
+              <Menu>
+                <CircleLink
+                  href="https://github.com/JCayabyab/bike2go"
+                  icon={["fab", "github"]}
+                />
+                {/* <CircleLink icon="comment-alt" name="blog post" /> */}
+              </Menu>
+            </Description>
+            <ImgWrapper>
+              <Img fluid={bike2go.childImageSharp.fluid} />
+            </ImgWrapper>
+          </Details>
+        </ProjectItem>
         <ProjectItem
           title="datespot"
           onClick={() => this.onProjectClick("datespot")}
@@ -76,6 +112,36 @@ class ProjectAccordion extends Component {
             </Description>
             <ImgWrapper>
               <Img fluid={datespot.childImageSharp.fluid} />
+            </ImgWrapper>
+          </Details>
+        </ProjectItem>
+        <ProjectItem
+          title="MyRecipeList"
+          onClick={() => this.onProjectClick("MyRecipeList")}
+          active={this.state.active}
+          color="#2d7dab"
+          activeColor="#305f7a"
+          logo={myrecipelistLogo}
+        >
+          <Details>
+            <Description>
+              <p>A website to share recipes and track meals cooked.</p>
+              <p>
+                <b>Stack: </b>MySQL, Express, Node.js, React Hooks + Context API
+              </p>
+              <small>
+                Built as the final project for my Database Design course!
+              </small>
+              <Menu>
+                <CircleLink
+                  href="https://github.com/JCayabyab/my-recipe-list"
+                  icon={["fab", "github"]}
+                />
+                {/* <CircleLink icon="comment-alt" name="blog post" /> */}
+              </Menu>
+            </Description>
+            <ImgWrapper>
+              <Img fluid={myrecipelist.childImageSharp.fluid} />
             </ImgWrapper>
           </Details>
         </ProjectItem>
@@ -129,6 +195,12 @@ export default props => (
         datespot: file(relativePath: { eq: "datespot.png" }) {
           ...fluidImage
         }
+        bike2go: file(relativePath: { eq: "bike2go.png" }) {
+          ...fluidImage
+        }
+        myrecipelist: file(relativePath: { eq: "myrecipelist.png" }) {
+          ...fluidImage
+        }
         crowdbrainLogo: file(relativePath: { eq: "crowdbrain-logo.png" }) {
           childImageSharp {
             fixed(width: 30, height: 30) {
@@ -137,6 +209,20 @@ export default props => (
           }
         }
         datespotLogo: file(relativePath: { eq: "datespot-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        bike2goLogo: file(relativePath: { eq: "bike2go-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        myrecipelistLogo: file(relativePath: { eq: "myrecipelist-logo.png" }) {
           childImageSharp {
             fixed(width: 30, height: 30) {
               ...GatsbyImageSharpFixed
@@ -152,7 +238,7 @@ export default props => (
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1680, maxHeight: 970) {
+      fluid(maxWidth: 1680) {
         ...GatsbyImageSharpFluid
       }
     }
