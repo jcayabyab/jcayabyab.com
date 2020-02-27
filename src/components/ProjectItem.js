@@ -40,12 +40,10 @@ const Description = styled.div`
   background: ${props => props.color};
   color: white;
   padding: 0px 20px;
+  transition: height 0.5s cubic-bezier(0.29, 0.9, 0.69, 0.96);
 
   @media screen and (max-width: 900px) {
     height: ${({ isopen }) => (isopen ? "calc(100vh - 52px)" : "0px")};
-  }
-  @media screen and (min-width: 900px) {
-    transition: height 0.6s cubic-bezier(0.29, 0.9, 0.69, 0.96);
   }
 `;
 
@@ -63,7 +61,7 @@ const ProjectItem = props => {
   const handleClick = () => {
     // from parent accordion
     onClick();
-    // small timeout to let css height change - 80 chosen arbitrarily
+    // small timeout to let css height change
     setTimeout(() => {
       // scroll to this item
       window.scrollTo({
@@ -71,7 +69,8 @@ const ProjectItem = props => {
         left: 0,
         behavior: "smooth"
       });
-    }, 80);
+    // 550 to allow animation to play
+    }, 500);
   };
 
   return (
@@ -89,9 +88,10 @@ const ProjectItem = props => {
             style={{ margin: "0px 5px" }}
           />
         </Title>
-        <Icon icon={`angle-down`} isopen={isOpen} />
+        {/* convert to number to avoid error */}
+        <Icon icon={`angle-down`} isopen={+isOpen} />
       </Header>
-      <Description isopen={isOpen} color={color}>
+      <Description isopen={+isOpen} color={color}>
         {children}
       </Description>
     </div>
