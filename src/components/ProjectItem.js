@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -36,7 +36,6 @@ const Description = styled.div`
   display: flex;
   align-items: center;
   height: ${({ isopen }) => (isopen ? "500px" : "0px")};
-  transition: height 0.6s cubic-bezier(0.29, 0.9, 0.69, 0.96);
   overflow: hidden;
   background: ${props => props.color};
   color: white;
@@ -45,53 +44,59 @@ const Description = styled.div`
   @media screen and (max-width: 900px) {
     height: ${({ isopen }) => (isopen ? "calc(100vh - 52px)" : "0px")};
   }
+  @media screen and (min-width: 900px) {
+    transition: height 0.6s cubic-bezier(0.29, 0.9, 0.69, 0.96);
+  }
 `;
 
-class ProjectItem extends Component {
-  state = { isOpen: false };
+const ProjectItem = props => {
+  const itemRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const { onClick, color, activeColor, title, children, logo } = props;
 
-  componentDidMount() {
-    const { active, title } = this.props;
-    if (active === title) {
-      this.setState({ isOpen: true });
-    }
-  }
+  useEffect(() => {
+    // open project when selected
+    const { active, title } = props;
+    setIsOpen(active === title);
+  }, [setIsOpen, props]);
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.active !== prevProps.active) {
-      const { active, title } = this.props;
-      this.setState({ isOpen: active === title });
-    }
-  }
+  const handleClick = () => {
+    // from parent accordion
+    onClick();
+    // small timeout to let css height change - 80 chosen arbitrarily
+    setTimeout(() => {
+      // scroll to this item
+      window.scrollTo({
+        top: itemRef.current.offsetTop,
+        left: 0,
+        behavior: "smooth"
+      });
+    }, 80);
+  };
 
-  render() {
-    const { onClick, color, activeColor, title, children, logo } = this.props;
-    const { isOpen } = this.state;
-
-    return (
-      <div>
-        <Header
-          onClick={onClick}
-          color={color}
-          activecolor={activeColor}
-          isopen={isOpen}
-        >
-          <Title>
-            {title}
-            <Img
-              fixed={logo.childImageSharp.fixed}
-              style={{ margin: "0px 5px" }}
-            />
-          </Title>
-          <Icon icon={`angle-down`} isopen={isOpen ? 1 : 0} />
-        </Header>
-        <Description isopen={isOpen ? 1 : 0} color={color}>
-          {children}
-        </Description>
-      </div>
-    );
-  }
-}
+  return (
+    <div ref={itemRef}>
+      <Header
+        onClick={handleClick}
+        color={color}
+        activecolor={activeColor}
+        isopen={isOpen}
+      >
+        <Title>
+          {title}
+          <Img
+            fixed={logo.childImageSharp.fixed}
+            style={{ margin: "0px 5px" }}
+          />
+        </Title>
+        <Icon icon={`angle-down`} isopen={isOpen} />
+      </Header>
+      <Description isopen={isOpen} color={color}>
+        {children}
+      </Description>
+    </div>
+  );
+};
 
 ProjectItem.propTypes = {
   title: PropTypes.string,

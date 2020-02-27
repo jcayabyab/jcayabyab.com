@@ -42,6 +42,13 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["Nunito Sans\:400,700"],
+        display: "swap"
+      }
+    },
+    {
       resolve: "gatsby-plugin-typography",
       options: {
         pathToConfigModule: "src/utils/typography"

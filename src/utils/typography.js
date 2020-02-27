@@ -4,9 +4,10 @@ const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.5,
   headerFontFamily: [
-    "Avenir Next",
-    "Helvetica Neue",
+    "Nunito Sans",
+    "Cabin",
     "Segoe UI",
+    "Helvetica Neue",
     "Helvetica",
     "Arial",
     "sans-serif"

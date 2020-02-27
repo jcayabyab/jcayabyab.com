@@ -10,7 +10,6 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Menu = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   margin: 10px 0px;
