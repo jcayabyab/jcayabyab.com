@@ -10,6 +10,15 @@ const LinkWrapper = styled(Link)`
   margin: 2px;
   display: block;
   padding-top: 20px;
+  transition: background-color 0.25s linear;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  background-color: #fff;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 const Wrapper = styled.div`

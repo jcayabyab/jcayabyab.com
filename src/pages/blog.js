@@ -9,7 +9,7 @@ import styled from "styled-components";
 const Wrapper = styled.h1`
   display: flex;
   justify-content: center;
-  margin: 0;
+  margin-bottom: 1rem;
 `;
 
 const Header = styled.div`
@@ -21,7 +21,7 @@ const Header = styled.div`
 
 const HeaderTab = styled.a`
   cursor: pointer;
-  opacity: ${props => (props.active ? "1" : "0.6")};
+  opacity: ${props => (props.active ? "1" : "0.25")};
 
   transition: opacity 0.2s linear;
 
@@ -36,7 +36,7 @@ const Slash = styled.div`
 
 class BlogPage extends Component {
   state = {
-    selectedTab: "personal"
+    selectedTab: "tech"
   };
 
   renderHeader() {
@@ -44,17 +44,17 @@ class BlogPage extends Component {
       <Wrapper>
         <Header>
           <HeaderTab
-            onClick={() => this.updateTab("personal")}
-            active={this.state.selectedTab === "personal"}
-          >
-            Personal
-          </HeaderTab>
-          <Slash>/</Slash>
-          <HeaderTab
             onClick={() => this.updateTab("tech")}
             active={this.state.selectedTab === "tech"}
           >
             Tech
+          </HeaderTab>
+          <Slash>/</Slash>
+          <HeaderTab
+            onClick={() => this.updateTab("personal")}
+            active={this.state.selectedTab === "personal"}
+          >
+            Personal
           </HeaderTab>
         </Header>
       </Wrapper>

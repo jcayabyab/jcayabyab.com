@@ -39,7 +39,7 @@ const Template = ({ data }) => {
         <hr
           style={{
             background: "#6d72c3",
-            height: "3px",
+            height: "7px",
             width: "40%",
             margin: "10px auto"
           }}

@@ -1,7 +1,7 @@
 ---
 path: "/blog/study"
 date: "2019-01-21"
-title: "Efficient A's: Getting the Highest Mark from the Lowest Effort"
+title: "Efficient A's: Getting the highest mark from the lowest effort"
 subtitle: "A quick guide on studying efficiently and scoring the highest on your tests."
 author: "Jofred Cayabyab"
 type: "personal"

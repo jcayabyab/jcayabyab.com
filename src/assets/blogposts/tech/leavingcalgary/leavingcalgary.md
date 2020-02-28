@@ -1,7 +1,7 @@
 ---
 path: "/blog/leavingcalgary"
 date: "2020-02-28"
-title: "Why Young Tech Talent is Leaving Calgary: From a Young Software Developer"
+title: "Why young tech talent is leaving Calgary: from a software engineering student"
 subtitle: "I try to answer the question of why young adults are leaving Calgary, and some improvements to make Calgary a more attractive place for younger people."
 author: "Jofred Cayabyab"
 type: "tech"
