@@ -14,7 +14,8 @@ import {
   faFileAlt,
   faBolt,
   faCommentAlt,
-  faCalendarDay
+  faCalendarDay,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -26,7 +27,8 @@ library.add(
   faFileAlt,
   faBolt,
   faCommentAlt,
-  faCalendarDay
+  faCalendarDay,
+  faEnvelope
 );
 
 const Layout = ({ children }) => (
