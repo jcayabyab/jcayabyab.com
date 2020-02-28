@@ -1,6 +1,6 @@
 ---
 path: "/blog/welcome"
-date: "2019-12-21"
+date: "2018-12-21"
 title: "Welcome to my blog!"
 subtitle: "Here's a little more info about me."
 author: "Jofred Cayabyab"
