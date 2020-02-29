@@ -17,6 +17,8 @@ const TooltipWrapper = styled.div`
 
 const Icon = styled(FontAwesomeIcon)`
   color: #6d72c3;
+  cursor: pointer;
+  margin: 0px 3px;
 `;
 
 const TooltipArrow = styled.div`
@@ -59,8 +61,8 @@ const Tooltip = props => {
     const buttonDimensions = buttonRef.current.getBoundingClientRect();
     const tooltipDimensions = tooltipWrapperRef.current.getBoundingClientRect();
 
-    const leftx = buttonDimensions.x; // most left x of button
-    const topy = buttonDimensions.y; // most top y of button
+    const leftx = buttonDimensions.x + window.pageXOffset; // most left x of button
+    const topy = buttonDimensions.y + window.pageYOffset; // most top y of button
 
     // move x and y of tooltip
     // center x
@@ -68,7 +70,6 @@ const Tooltip = props => {
     let y = topy - tooltipDimensions.height;
 
     // reposition if cut off by screen
-    const screenHeight = document.documentElement.clientHeight;
     const screenWidth = document.documentElement.clientWidth;
 
     // left
@@ -80,8 +81,6 @@ const Tooltip = props => {
     // right
     if (y < 0) {
       y = 0;
-    } else if (y + tooltipDimensions.height > screenHeight) {
-      y = screenHeight - tooltipDimensions.height;
     }
 
     setTooltipCoords({ x, y });
@@ -117,7 +116,7 @@ const Tooltip = props => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <span ref={buttonRef}>
         <Icon icon={"info-circle"} onMouseDown={handleButtonDown}>
           Click me
@@ -136,7 +135,7 @@ const Tooltip = props => {
           </Scrollbars>
         </TooltipLabel>
       </TooltipWrapper>
-    </div>
+    </React.Fragment>
   );
 };
 

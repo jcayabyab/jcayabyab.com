@@ -39,6 +39,7 @@ module.exports = {
         ]
       }
     },
+    "gatsby-plugin-feed-mdx",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
