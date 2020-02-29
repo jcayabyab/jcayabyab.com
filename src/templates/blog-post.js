@@ -23,6 +23,16 @@ const DateAndAuthor = styled.div`
   color: gray;
 `;
 
+const ArticleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+`;
+
+const Article = styled.div`
+  max-width: 800px;
+`;
+
 const Template = ({ data }) => {
   const post = data.mdx;
   const { title, subtitle, date, author } = post.frontmatter;
@@ -49,19 +59,23 @@ const Template = ({ data }) => {
             margin: "10px auto"
           }}
         />
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <small>
-          Like my writing? Check out some of my other blog posts{" "}
-          <Link to="/blog">here</Link>. Wanna chat further? Email me{" "}
-          <a
-            href="mailto:me@jcayabyab.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </a>
-          .
-        </small>
+        <ArticleWrapper>
+          <Article>
+            <MDXRenderer>{post.body}</MDXRenderer>
+            <small>
+              Like my writing? Check out some of my other blog posts{" "}
+              <Link to="/blog">here</Link>. Wanna chat further? Email me{" "}
+              <a
+                href="mailto:me@jcayabyab.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+              </a>
+              .
+            </small>
+          </Article>
+        </ArticleWrapper>
       </Wrapper>
     </Layout>
   );
