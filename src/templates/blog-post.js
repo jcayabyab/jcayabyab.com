@@ -27,11 +27,10 @@ const ArticleWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 1.5em;
-  max-width: 800px;
 `;
 
 const Article = styled.div`
-  width: 100%;
+  max-width: min(100%, 800px);
 `;
 
 const Template = ({ data }) => {
