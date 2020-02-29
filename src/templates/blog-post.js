@@ -3,12 +3,16 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import formatDate from "../utils/formatDate";
 import Layout from "../components/layout";
+import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div`
   @media only screen and (max-width: 1024px) {
-    padding: 0px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
+
+  padding-bottom: 3rem;
 `;
 
 const DateAndAuthor = styled.div`
@@ -26,7 +30,7 @@ const Template = ({ data }) => {
     <Layout>
       <Wrapper>
         <h1 style={{ fontSize: "32pt" }}>{title}</h1>
-        <h4 style={{marginBottom: "5px"}}>{subtitle}</h4>
+        <h4 style={{ marginBottom: "5px" }}>{subtitle}</h4>
         <DateAndAuthor>
           <small>
             <FontAwesomeIcon icon="calendar-day" />
@@ -39,12 +43,24 @@ const Template = ({ data }) => {
         <hr
           style={{
             background: "#6d72c3",
-            height: "3px",
+            height: "7px",
             width: "40%",
             margin: "10px auto"
           }}
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <small>
+          Like my writing? Check out some of my other blog posts{" "}
+          <Link to="/blog">here</Link>. Wanna chat further? Email me{" "}
+          <a
+            href="mailto:me@jcayabyab.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            here
+          </a>
+          .
+        </small>
       </Wrapper>
     </Layout>
   );

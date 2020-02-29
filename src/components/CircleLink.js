@@ -41,6 +41,7 @@ const CircleLink = props => {
   return (
     <Wrapper>
       <Circle {...props} target="_blank">
+        {/* icon is from fortawesome, have to import */}
         <Icon icon={props.icon} iconsize={props.size} />
         {props.children}
       </Circle>

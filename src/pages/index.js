@@ -52,14 +52,23 @@ const IndexPage = ({ data }) => (
           better!
         </IndexIntro>
         <Menu>
+          <CircleLink
+            href="mailto:me@jcayabyab.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon="envelope"
+            name="email"
+          />
           <CircleLink href="./resume.pdf" icon="file-alt" name="resume" />
           <CircleLink
             href="https://github.com/JCayabyab"
             icon={["fab", "github"]}
+            name="github"
           />
           <CircleLink
             href="https://www.linkedin.com/in/jofred-cayabyab/"
             icon={["fab", "linkedin"]}
+            name="linkedin"
           />
         </Menu>
       </TextWrapper>
