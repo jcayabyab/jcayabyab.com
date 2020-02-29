@@ -31,7 +31,7 @@ const Description = styled.div`
 `;
 
 const ProjectAccordion = props => {
-  const [active, setActive] = useState("datespot");
+  const [active, setActive] = useState("bike2go");
 
   const onProjectClick = name => {
     setActive(name);
@@ -69,6 +69,9 @@ const ProjectAccordion = props => {
               <b>Stack: </b>Azure Face API, MongoDB, Express, Node.js, React,
               Redux
             </p>
+            <small>
+              Built as our submission for CalgaryHacks 2019!
+            </small>
             <Menu>
               <CircleLink
                 href="https://github.com/JCayabyab/bike2go"
