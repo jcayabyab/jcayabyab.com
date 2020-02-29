@@ -68,11 +68,11 @@ class BlogPage extends Component {
   renderPosts() {
     const { data } = this.props;
 
-    const personalPosts = data.allMarkdownRemark.edges.filter(
+    const personalPosts = data.allMdx.edges.filter(
       ({ node }) => node.frontmatter.type === "personal"
     );
 
-    const techPosts = data.allMarkdownRemark.edges.filter(
+    const techPosts = data.allMdx.edges.filter(
       ({ node }) => node.frontmatter.type === "tech"
     );
 
@@ -116,7 +116,7 @@ class BlogPage extends Component {
 
 export const query = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark(
+    allMdx(
       limit: 10
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true } } }

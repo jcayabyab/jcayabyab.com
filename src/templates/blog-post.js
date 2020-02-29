@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
 import formatDate from "../utils/formatDate";
 import Layout from "../components/layout";
@@ -23,7 +24,7 @@ const DateAndAuthor = styled.div`
 `;
 
 const Template = ({ data }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const { title, subtitle, date, author } = post.frontmatter;
 
   return (
@@ -48,7 +49,7 @@ const Template = ({ data }) => {
             margin: "10px auto"
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <small>
           Like my writing? Check out some of my other blog posts{" "}
           <Link to="/blog">here</Link>. Wanna chat further? Email me{" "}
@@ -68,8 +69,8 @@ const Template = ({ data }) => {
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+    mdx(frontmatter: { path: { eq: $path } }) {
+      body
       frontmatter {
         title
         subtitle

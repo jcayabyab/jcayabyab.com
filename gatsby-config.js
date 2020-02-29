@@ -22,9 +22,10 @@ module.exports = {
     },
     "gatsby-plugin-catch-links",
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: "gatsby-plugin-mdx",
       options: {
-        plugins: [
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -41,11 +42,10 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-mdx",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ["Nunito Sans\:400,700"],
+        fonts: ["Nunito Sans:400,700"],
         display: "swap"
       }
     },
