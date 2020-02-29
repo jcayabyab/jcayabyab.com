@@ -41,6 +41,7 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-mdx",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
