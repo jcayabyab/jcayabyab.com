@@ -1,30 +1,22 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
+import { Scrollbars } from "react-custom-scrollbars";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TooltipWrapper = styled.div`
   position: absolute;
-  left: ${({ttCoords}) => ttCoords.x}px;
-  top: ${({ttCoords}) => ttCoords.y}px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: normal;
-  line-height: 1.42857143;
-  text-align: left;
-  text-align: start;
-  text-shadow: none;
-  text-transform: none;
-  white-space: normal;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
-  font-size: 12px;
-  display: ${({ isOpen }) => (isOpen ? "inline-block" : "none")};
-  ${({isOpen}) => !isOpen && "height: 0px; width: 0px;"}
-  transition: height 1s linear;
+  left: ${({ ttCoords }) => ttCoords.x}px;
+  top: ${({ ttCoords }) => ttCoords.y}px;
+  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
+  opacity: ${({ isOpen }) => (isOpen ? "1.0" : "0")};
+  transition: opacity 0.25s linear;
 
   /* make top */
   margin-top: -5px;
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+  color: #6d72c3;
 `;
 
 const TooltipArrow = styled.div`
@@ -39,26 +31,30 @@ const TooltipArrow = styled.div`
   height: 0;
   border-color: transparent;
   border-style: solid;
-  border-top-color: #000;
+  border-top-color: #6d72c3;
 `;
 
 const TooltipLabel = styled.div`
-  max-width: 200px;
-  padding: 3px 8px;
+  padding: 0.5em;
   color: #fff;
+  max-width: 18em;
   text-align: center;
-  background-color: #000;
+  background-color: #6d72c3;
+  word-break: normal;
   border-radius: 4px;
+
+  /* smaller font */
+  font-size: 11pt;
 `;
 
 const Tooltip = props => {
   const [isOpen, setIsOpen] = useState(false);
   // messy :(
-  const [tooltipCoords, setTooltipCoords] = useState({x: 0, y: 0});
+  const [tooltipCoords, setTooltipCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     // reposition relative to button
-    if (buttonRef === null) return;
+    if (buttonRef.current === null) return;
 
     const buttonDimensions = buttonRef.current.getBoundingClientRect();
     const tooltipDimensions = tooltipWrapperRef.current.getBoundingClientRect();
@@ -68,17 +64,32 @@ const Tooltip = props => {
 
     // move x and y of tooltip
     // center x
-    const x = leftx + (buttonDimensions.width - tooltipDimensions.width) / 2;
-    const y = topy - tooltipDimensions.height;
+    let x = leftx + (buttonDimensions.width - tooltipDimensions.width) / 2;
+    let y = topy - tooltipDimensions.height;
 
-    setTooltipCoords({x, y});
-  }, [isOpen])
+    // reposition if cut off by screen
+    const screenHeight = document.documentElement.clientHeight;
+    const screenWidth = document.documentElement.clientWidth;
+
+    // left
+    if (x < 0) {
+      x = 0;
+    } else if (x + tooltipDimensions.width > screenWidth) {
+      x = screenWidth - tooltipDimensions.width;
+    }
+    // right
+    if (y < 0) {
+      y = 0;
+    } else if (y + tooltipDimensions.height > screenHeight) {
+      y = screenHeight - tooltipDimensions.height;
+    }
+
+    setTooltipCoords({ x, y });
+  }, [isOpen]);
 
   // setup refs for checking click out
   const tooltipWrapperRef = useRef(null);
   const buttonRef = useRef(null);
-
-  // setup events
 
   // button down to be consistent with click outside
   const handleButtonDown = () => {
@@ -107,16 +118,23 @@ const Tooltip = props => {
 
   return (
     <div>
-      <button ref={buttonRef} onMouseDown={handleButtonDown}>
-        Click me
-      </button>
+      <span ref={buttonRef}>
+        <Icon icon={"info-circle"} onMouseDown={handleButtonDown}>
+          Click me
+        </Icon>
+      </span>
+
       <TooltipWrapper
         ref={tooltipWrapperRef}
         ttCoords={tooltipCoords}
         isOpen={isOpen}
       >
         <TooltipArrow></TooltipArrow>
-        <TooltipLabel>ToolTip Component</TooltipLabel>
+        <TooltipLabel>
+          <Scrollbars autoHeight autoHeightMax={200}>
+            {props.children}
+          </Scrollbars>
+        </TooltipLabel>
       </TooltipWrapper>
     </div>
   );
