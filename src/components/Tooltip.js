@@ -119,11 +119,11 @@ const Tooltip = props => {
 
   return (
     <React.Fragment>
-      <span ref={buttonRef}>
+      <div style={{display: "inline-block"}} ref={buttonRef}>
         <Icon icon={"info-circle"} onMouseDown={handleButtonDown}>
           Click me
         </Icon>
-      </span>
+      </div>
 
       <TooltipWrapper
         ref={tooltipWrapperRef}
