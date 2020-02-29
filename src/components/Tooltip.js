@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Scrollbars } from "react-custom-scrollbars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TooltipWrapper = styled.div`
@@ -50,6 +49,22 @@ const TooltipLabel = styled.div`
   /* smaller font */
   font-size: 11pt;
 `;
+
+const TooltipText = styled.div`
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 4.75em;
+  /* scrollbar-color: red yellow; */
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: rgba(0,0,0,0);
+  }
+
+  & > a {
+    color: #fff;
+  }
+`
 
 const Tooltip = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -132,13 +147,10 @@ const Tooltip = props => {
       >
         <TooltipArrow></TooltipArrow>
         <TooltipLabel>
-          <Scrollbars
-            autoHeight
-            autoHeightMax={200}
-            hideTracksWhenNotNeeded={true}
+          <TooltipText
           >
             {props.children}
-          </Scrollbars>
+          </TooltipText>
         </TooltipLabel>
       </TooltipWrapper>
     </React.Fragment>
