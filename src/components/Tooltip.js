@@ -37,13 +37,15 @@ const TooltipArrow = styled.div`
 `;
 
 const TooltipLabel = styled.div`
-  padding: 0.5em;
+  padding: 0.75em;
   color: #fff;
+  font-weight: normal;
   max-width: 18em;
-  text-align: center;
   background-color: #6d72c3;
   word-break: normal;
   border-radius: 4px;
+  line-height: 1.4;
+  text-align: left;
 
   /* smaller font */
   font-size: 11pt;
@@ -130,7 +132,11 @@ const Tooltip = props => {
       >
         <TooltipArrow></TooltipArrow>
         <TooltipLabel>
-          <Scrollbars autoHeight autoHeightMax={200}>
+          <Scrollbars
+            autoHeight
+            autoHeightMax={200}
+            hideTracksWhenNotNeeded={true}
+          >
             {props.children}
           </Scrollbars>
         </TooltipLabel>
