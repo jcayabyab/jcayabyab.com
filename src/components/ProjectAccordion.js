@@ -22,6 +22,12 @@ const Details = styled.div`
   @media only screen and (max-width: 900px) {
     flex-direction: column;
   }
+
+  @media only screen and (min-width: 900px) {
+    & > div {
+      flex: 1;
+    }
+  }
 `;
 
 const Description = styled.div`
@@ -30,10 +36,10 @@ const Description = styled.div`
   margin-right: 15px;
 `;
 
-const ProjectAccordion = props => {
+const ProjectAccordion = (props) => {
   const [active, setActive] = useState("bike2go");
 
-  const onProjectClick = name => {
+  const onProjectClick = (name) => {
     setActive(name);
     console.log(active, name);
   };
@@ -43,14 +49,49 @@ const ProjectAccordion = props => {
     datespot,
     bike2go,
     myrecipelist,
+    tlreadr,
     crowdbrainLogo,
     datespotLogo,
     bike2goLogo,
-    myrecipelistLogo
+    myrecipelistLogo,
+    tlreadrLogo,
   } = props.data;
 
   return (
     <Wrapper>
+      <ProjectItem
+        title="TLreaDR"
+        onClick={() => onProjectClick("TLreaDR")}
+        active={active}
+        color="#ff3535"
+        activeColor="#df1515"
+        logo={tlreadrLogo}
+      >
+        <Details>
+          <Description>
+            <p>
+              A simple app that allows users to post TL;DR (too long; didn't
+              read) summaries of lengthy news articles.
+            </p>
+            <p>
+              <b>Stack: </b>PostgreSQL, Flask, React, Redux
+            </p>
+            <small>
+              Built as the final project for our Software Architecture course!
+            </small>
+            <Menu>
+              <CircleLink
+                href="https://github.com/garywu2/TLreaDR"
+                icon={["fab", "github"]}
+              />
+              {/* <CircleLink icon="comment-alt" name="blog post" /> */}
+            </Menu>
+          </Description>
+          <ImgWrapper>
+            <Img fluid={tlreadr.childImageSharp.fluid} />
+          </ImgWrapper>
+        </Details>
+      </ProjectItem>
       <ProjectItem
         title="bike2go"
         onClick={() => onProjectClick("bike2go")}
@@ -69,9 +110,7 @@ const ProjectAccordion = props => {
               <b>Stack: </b>Azure Face API, MongoDB, Express, Node.js, React,
               Redux
             </p>
-            <small>
-              Built as our submission for CalgaryHacks 2019!
-            </small>
+            <small>Built as our submission for CalgaryHacks 2019!</small>
             <Menu>
               <CircleLink
                 href="https://github.com/JCayabyab/bike2go"
@@ -189,7 +228,7 @@ const ProjectAccordion = props => {
   );
 };
 
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -203,6 +242,9 @@ export default props => (
           ...fluidImage
         }
         myrecipelist: file(relativePath: { eq: "myrecipelist.png" }) {
+          ...fluidImage
+        }
+        tlreadr: file(relativePath: { eq: "tlreadr.png" }) {
           ...fluidImage
         }
         crowdbrainLogo: file(relativePath: { eq: "crowdbrain-logo.png" }) {
@@ -233,9 +275,16 @@ export default props => (
             }
           }
         }
+        tlreadrLogo: file(relativePath: { eq: "tlreadr-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     `}
-    render={data => <ProjectAccordion {...props} data={data} />}
+    render={(data) => <ProjectAccordion {...props} data={data} />}
   />
 );
 
