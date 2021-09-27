@@ -37,11 +37,10 @@ const Description = styled.div`
 `;
 
 const ProjectAccordion = (props) => {
-  const [active, setActive] = useState("bike2go");
+  const [active, setActive] = useState("VimRace");
 
   const onProjectClick = (name) => {
     setActive(name);
-    console.log(active, name);
   };
 
   const {
@@ -50,18 +49,58 @@ const ProjectAccordion = (props) => {
     bike2go,
     myrecipelist,
     tlreadr,
+    vimrace,
     crowdbrainLogo,
     datespotLogo,
     bike2goLogo,
     myrecipelistLogo,
     tlreadrLogo,
+    vimraceLogo
   } = props.data;
 
   return (
     <Wrapper>
       <ProjectItem
+        title="VimRace"
+        onClick={onProjectClick}
+        active={active}
+        color="#2d2d2d"
+        activeColor="#212121"
+        logo={vimraceLogo}
+      >
+        <Details>
+          <Description>
+            <p>
+              An online multiplayer game where players can race each other using integrated
+              Vim terminals. Supports custom <code>.vimrc</code> settings.
+            </p>
+            <p>
+              <b>Stack: </b>PostgreSQL, Node, React, Redux
+            </p>
+            <small>
+              Over 500 unique users!
+            </small>
+            <Menu>
+              <CircleLink
+                href="https://github.com/JCayabyab/vim-race"
+                icon={["fab", "github"]}
+              />
+              <CircleLink
+                href="http://www.vimrace.com/"
+                icon="bolt"
+                name="live website"
+              />
+              {/* <CircleLink icon="comment-alt" name="blog post" /> */}
+            </Menu>
+          </Description>
+          <ImgWrapper>
+            <Img fluid={vimrace.childImageSharp.fluid} />
+          </ImgWrapper>
+        </Details>
+      </ProjectItem>
+      <ProjectItem
         title="TLreaDR"
-        onClick={() => onProjectClick("TLreaDR")}
+        onClick={onProjectClick}
         active={active}
         color="#ff3535"
         activeColor="#df1515"
@@ -94,7 +133,7 @@ const ProjectAccordion = (props) => {
       </ProjectItem>
       <ProjectItem
         title="bike2go"
-        onClick={() => onProjectClick("bike2go")}
+        onClick={onProjectClick}
         active={active}
         color="#00a000"
         activeColor="#008000"
@@ -126,7 +165,7 @@ const ProjectAccordion = (props) => {
       </ProjectItem>
       <ProjectItem
         title="datespot"
-        onClick={() => onProjectClick("datespot")}
+        onClick={onProjectClick}
         active={active}
         color="#ff3535"
         activeColor="#df1515"
@@ -161,7 +200,7 @@ const ProjectAccordion = (props) => {
       </ProjectItem>
       <ProjectItem
         title="MyRecipeList"
-        onClick={() => onProjectClick("MyRecipeList")}
+        onClick={onProjectClick}
         active={active}
         color="#2d7dab"
         activeColor="#305f7a"
@@ -191,7 +230,7 @@ const ProjectAccordion = (props) => {
       </ProjectItem>
       <ProjectItem
         title="CrowdBrain"
-        onClick={() => onProjectClick("CrowdBrain")}
+        onClick={onProjectClick}
         active={active}
         color="#50a0eb"
         activeColor="#0090da"
@@ -247,6 +286,9 @@ export default (props) => (
         tlreadr: file(relativePath: { eq: "tlreadr.png" }) {
           ...fluidImage
         }
+        vimrace: file(relativePath: { eq: "vimrace.png" }) {
+          ...fluidImage
+        }
         crowdbrainLogo: file(relativePath: { eq: "crowdbrain-logo.png" }) {
           childImageSharp {
             fixed(width: 30, height: 30) {
@@ -276,6 +318,13 @@ export default (props) => (
           }
         }
         tlreadrLogo: file(relativePath: { eq: "tlreadr-logo.png" }) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        vimraceLogo: file(relativePath: { eq: "vimrace-logo.png" }) {
           childImageSharp {
             fixed(width: 30, height: 30) {
               ...GatsbyImageSharpFixed

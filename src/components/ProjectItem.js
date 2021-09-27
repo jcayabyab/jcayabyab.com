@@ -60,7 +60,7 @@ const ProjectItem = props => {
 
   const handleClick = () => {
     // from parent accordion
-    onClick();
+    onClick(title);
     // small timeout to let css height change
     setTimeout(() => {
       // scroll to this item
@@ -69,7 +69,7 @@ const ProjectItem = props => {
         left: 0,
         behavior: "smooth"
       });
-    // 550 to allow animation to play
+      // 550 to allow animation to play
     }, 500);
   };
 
