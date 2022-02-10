@@ -45,13 +45,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Header
-          siteTitle={data.site.siteMetadata.title}
-          location={data.location}
-        />
-        <div>{children}</div>
-      </>
+      <div>{children}</div>
     )}
   />
 );
