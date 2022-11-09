@@ -45,11 +45,7 @@ const IndexPage = ({ data }) => (
       <TextWrapper>
         <IndexHeader>Welcome to my site!</IndexHeader>
         <IndexIntro>
-          I'm currently in my fourth year in Software Engineering at the
-          University of Calgary. My current interests include full-stack web
-          development, machine learning, and video game design. I'm currently
-          setting up a blog on this site where I hope you'll be able to get to
-          know me a little better!
+          I'm a software engineer who is looking to make an impact! Check out the links belows to learn about me a little bit better.
         </IndexIntro>
         <Menu>
           <CircleLink
