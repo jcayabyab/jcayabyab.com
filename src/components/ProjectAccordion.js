@@ -85,11 +85,6 @@ const ProjectAccordion = (props) => {
                 href="https://github.com/JCayabyab/vim-race"
                 icon={["fab", "github"]}
               />
-              <CircleLink
-                href="http://www.vimrace.com/"
-                icon="bolt"
-                name="live website"
-              />
               {/* <CircleLink icon="comment-alt" name="blog post" /> */}
             </Menu>
           </Description>
